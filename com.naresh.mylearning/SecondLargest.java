@@ -1,28 +1,30 @@
 public class SecondLargest {
 
     public static void main(String[] args) {
-        int[] nums = {-1,1,-2};
-     //   int[] nums = {10, 5, 20, 10, 8, 20, 15, 15, 12, 8};
+        int[] nums = { -1, 1, -2 };
+        // int[] nums = {10, 5, 20, 10, 8, 20, 15, 15, 12, 8};
 
-
-        int largest = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
+        /**
+         * Represents the largest value found so far.
+         */
+        int biggest = Integer.MIN_VALUE;
+        int secondBiggest = Integer.MIN_VALUE;
 
         for (int num : nums) {
-            if (num > largest) {
-                secondLargest = largest;
-                largest = num;
-            } else if (num > secondLargest && num != largest) {
-                secondLargest = num;
+            if (num > biggest) {
+                secondBiggest = biggest;
+                biggest = num;
+            } else if (num > secondBiggest && num != biggest) {
+                secondBiggest = num;
             }
         }
 
         // Check if there's a second largest number
-        if (secondLargest != Integer.MIN_VALUE) {
-            System.out.println("The second largest number is: " + secondLargest);
+        if (secondBiggest != Integer.MIN_VALUE) {
+            System.out.println("The second largest number is: " + secondBiggest);
         } else {
             System.out.println("There is no second largest number in the array.");
         }
-}
-    
+    }
+
 }
